@@ -1,9 +1,13 @@
+from ai import AI
+from human import Human
 from player import Player
 import random
 
 class Game:
     def __init__(self):
-        pass
+        self.player_1 = Human()
+        self.player_2 = Human()
+        self.ai = AI()
             
     def run_game():
         global game_mode
@@ -48,11 +52,11 @@ Press 2 for 1P vs AI
                 game_mode = int(input("Game mode: "))
                
                 if game_mode == 1:
-                    player_vs_player_battle()
+                    player_vs_ai_battle()
                     break
 
                 if game_mode == 2:
-                    player_vs_ai_battle()
+                    player_vs_player_battle()
                     break
                 
                 print("")
@@ -61,11 +65,4 @@ Press 2 for 1P vs AI
                 choose_game_mode()
 
         def player_vs_ai_battle():
-            print('''
-Please choose your gesture.
-1 - Rock
-2 - Paper
-3 - Scissors
-4 - Lizard
-5 - Spock
-            ''')
+            
