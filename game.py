@@ -1,6 +1,5 @@
 from ai import AI
 from human import Human
-from player import Player
 import random
 
 class Game:
@@ -63,6 +62,12 @@ Press 2 for 1P vs AI
         def player_vs_ai_battle():
                 player_one = Human("Player One")
                 player_two = AI("Player Two")
+                
+                if player_one.wins == 2:
+                    print("You win!")
+
+                elif player_two.wins == 2:
+                    print("You lose.")
 
                 print('''
 Here are your gesture options.
@@ -86,4 +91,134 @@ Spock
                     print("It's a tie!")
                     player_vs_ai_battle()
 
-                #elif player_one.chosen_gesture == "Rock" and player_two.chosen_gesture == 
+                elif player_one.chosen_gesture == "Rock" and player_two.chosen_gesture == "Scissors" or "Lizard":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_ai_battle()
+
+                elif player_one.chosen_gesture == "Paper" and player_two.chosen_gesture == "Rock" or "Spock":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Scissors" and player_two.chosen_gesture == "Paper" or "Lizard":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Lizard" and player_two.chosen_gesture == "Spock" or "Paper":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Spock" and player_two.chosen_gesture == "Scissors" or "Rock":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Rock" and player_two.chosen_gesture == "Paper" or "Spock":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_ai_battle()     
+
+                elif player_one.chosen_gesture == "Paper" and player_two.chosen_gesture == "Scissors" or "Lizard":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Scissors" and player_two.chosen_gesture == "Rock" or "Spock":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Lizard" and player_two.chosen_gesture == "Rock" or "Scissors":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_ai_battle
+
+                elif player_one.chosen_gesture == "Spock" and player_two.chosen_gesture == "Paper" or "Lizard":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_ai_battle
+
+        def player_vs_player_battle():
+                player_one = Human("Player One")
+                player_two = Human("Player Two")
+                
+                if player_one.wins == 2:
+                    print("Player One Wins!")
+
+                elif player_two.wins == 2:
+                    print("Player Two Wins!")
+
+                print('''
+Here are your gesture options.
+
+Rock
+Paper
+Scissors
+Lizard
+Spock        
+                ''')
+                player_one.chosen_gesture = input("Choose a gesture: ")
+                player_two.chosen_gesture = input("Choose a gesture: ")
+
+                print(f'''
+{player_one.name} chose {player_one.chosen_gesture} and 
+
+{player_two.name} chose {player_two.chosen_gesture}
+                ''')
+
+                if player_one.chosen_gesture == player_two.chosen_gesture:
+                    print("It's a tie!")
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Rock" and player_two.chosen_gesture == "Scissors" or "Lizard":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Paper" and player_two.chosen_gesture == "Rock" or "Spock":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Scissors" and player_two.chosen_gesture == "Paper" or "Lizard":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Lizard" and player_two.chosen_gesture == "Spock" or "Paper":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Spock" and player_two.chosen_gesture == "Scissors" or "Rock":
+                    print("You win!")
+                    player_one.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Rock" and player_two.chosen_gesture == "Paper" or "Spock":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_player_battle()()
+                    
+                elif player_one.chosen_gesture == "Paper" and player_two.chosen_gesture == "Scissors" or "Lizard":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Scissors" and player_two.chosen_gesture == "Rock" or "Spock":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Lizard" and player_two.chosen_gesture == "Rock" or "Scissors":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_player_battle()
+
+                elif player_one.chosen_gesture == "Spock" and player_two.chosen_gesture == "Paper" or "Lizard":
+                    print("You lose!")
+                    player_two.wins += 1
+                    player_vs_player_battle()

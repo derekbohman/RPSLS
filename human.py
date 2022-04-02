@@ -6,4 +6,4 @@ class Human(Player):
         super().__init__(name)
 
     def choose_gesture(self):
-        self.chosen_gesture = input(" ")
+        pass
