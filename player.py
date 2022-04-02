@@ -8,4 +8,4 @@ class Player:
         self.wins = 0
 
     def choose_gesture(self):
-        
+        self.chosen_gesture = random.choice(self.gestures)

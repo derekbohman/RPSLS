@@ -5,9 +5,7 @@ import random
 
 class Game:
     def __init__(self):
-        self.player_1 = Human()
-        self.player_2 = Human()
-        self.ai = AI()
+        pass
             
     def run_game():
         global game_mode
@@ -16,9 +14,7 @@ class Game:
 **************************************************
 
 Welcome to Rock, Paper, Scissors, Lizard, Spock!
-        ''')
-        user_name = input("What is your name? ")
-        print(f'''
+
 The winner is the best of two out of three games.
 
 Use the number keys to choose your gesture.
@@ -40,14 +36,14 @@ Spock vaporizes Rock
 
 **************************************************
 
-Which game mode would you like to choose {user_name}?
+Which game mode would you like to choose?
 
 Press 1 for 1P vs 2P
 Press 2 for 1P vs AI
          ''')
 
         def choose_game_mode():
-           
+          
             while True:
                 game_mode = int(input("Game mode: "))
                
@@ -65,4 +61,29 @@ Press 2 for 1P vs AI
                 choose_game_mode()
 
         def player_vs_ai_battle():
-            
+                player_one = Human("Player One")
+                player_two = AI("Player Two")
+
+                print('''
+Here are your gesture options.
+
+Rock
+Paper
+Scissors
+Lizard
+Spock        
+                ''')
+                player_one.chosen_gesture = input("Choose a gesture: ")
+                player_two.chosen_gesture = random.choice(player_two.gestures)
+
+                print(f'''
+{player_one.name} chose {player_one.chosen_gesture} and 
+
+{player_two.name} chose {player_two.chosen_gesture}
+                ''')
+
+                if player_one.chosen_gesture == player_two.chosen_gesture:
+                    print("It's a tie!")
+                    player_vs_ai_battle()
+
+                #elif player_one.chosen_gesture == "Rock" and player_two.chosen_gesture == 
