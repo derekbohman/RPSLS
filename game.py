@@ -16,9 +16,9 @@ class Game:
 
 Welcome to Rock, Paper, Scissors, Lizard, Spock!
 
-The winner is the best of two out of three games.
+The best of two out of three games wins.
 
-Choose your gesture by typing the associated number.
+Choose your gesture by entering the associated number.
 
 Use the number keys to choose 1P vs 2P or 1P vs AI
 
@@ -30,15 +30,15 @@ Here are the available gestures and their abilities.
         
         print('''
 
-Rock crushes Scissors and Lizard
+Rock crushes Scissors and Lizard.
 
-Paper covers Rock and disproves Spock
+Paper covers Rock and disproves Spock.
 
-Scissors cut Paper and decapitate Lizard
+Scissors cut Paper and decapitate Lizard.
 
-Lizard poisons Spock and eats Paper
+Lizard poisons Spock and eats Paper.
 
-Spock smashes Scissors and vaporizes Rock
+Spock smashes Scissors and vaporizes Rock.
 
 *********************************************************************''')
 
@@ -91,9 +91,7 @@ Press 2 for 1P vs 2P
 
         def new_game_1p_vs_2p():
                 print("")
-                new_game = input('''Would you like to play again? 
-
-Type Yes or No. ''')
+                new_game = input("Would you like to play again? Type Yes or No. ")
 
                 if new_game == "No":
                         quit()
@@ -141,7 +139,7 @@ Choose your gesture!
 
                 print("")
 
-                chosen_gesture = int(input("Player One chosen gesture "))
+                chosen_gesture = int(input("Player One chosen gesture: "))
 
                 while chosen_gesture not in [0,1,2,3,4]:
                     print("")
@@ -253,7 +251,7 @@ Choose your gesture!
 
                 print("")
 
-                player_one_chosen_gesture = int(getpass("Player One chosen gesture "))
+                player_one_chosen_gesture = int(getpass("Player One chosen gesture: "))
 
                 while player_one_chosen_gesture not in [0, 1, 2, 3, 4]:
                     print("")
@@ -265,7 +263,7 @@ Choose your gesture!
 
                 print("")
 
-                player_two_chosen_gesture = int(getpass("Player Two chosen gesture "))
+                player_two_chosen_gesture = int(getpass("Player Two chosen gesture: "))
 
                 while player_two_chosen_gesture not in [0, 1, 2, 3, 4]:
                     print("")
@@ -274,7 +272,7 @@ Choose your gesture!
                     player_vs_player_battle()
 
                 player_two.chosen_gesture = player_two.gestures[player_two_chosen_gesture]
-                
+
                 print(f'''
 {player_one.name} chose {player_one.chosen_gesture} and {player_two.name} chose {player_two.chosen_gesture}.
                 ''')
