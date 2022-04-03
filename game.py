@@ -151,7 +151,7 @@ Choose your gesture!
 
                 ai.chosen_gesture = ai.gestures[random.randint(0,4)]
 
-                print("f{player_one.name} chose {player_one.chosen_gesture} and {ai.name} chose {ai.chosen_gesture}.")
+                print(f"{player_one.name} chose {player_one.chosen_gesture} and {ai.name} chose {ai.chosen_gesture}.")
 
                 print("")
 
@@ -273,9 +273,7 @@ Choose your gesture!
 
                 player_two.chosen_gesture = player_two.gestures[player_two_chosen_gesture]
 
-                print(f'''
-{player_one.name} chose {player_one.chosen_gesture} and {player_two.name} chose {player_two.chosen_gesture}.
-                ''')
+                print(f"{player_one.name} chose {player_one.chosen_gesture} and {player_two.name} chose {player_two.chosen_gesture}.")
 
                 if player_one.chosen_gesture == player_two.chosen_gesture:
                     sleep(1.5)
